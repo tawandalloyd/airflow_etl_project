@@ -1,0 +1,34 @@
+[2023-01-14T13:42:24.150+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: user_processing.storing_user manual__2023-01-14T12:33:24.613016+00:00 [queued]>
+[2023-01-14T13:42:24.174+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: user_processing.storing_user manual__2023-01-14T12:33:24.613016+00:00 [queued]>
+[2023-01-14T13:42:24.176+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-14T13:42:24.178+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 1
+[2023-01-14T13:42:24.179+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-14T13:42:24.227+0000] {taskinstance.py:1304} INFO - Executing <Task(BashOperator): storing_user> on 2023-01-14 12:33:24.613016+00:00
+[2023-01-14T13:42:24.246+0000] {standard_task_runner.py:55} INFO - Started process 33935 to run task
+[2023-01-14T13:42:24.259+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'user_processing', 'storing_user', 'manual__2023-01-14T12:33:24.613016+00:00', '--job-id', '26', '--raw', '--subdir', 'DAGS_FOLDER/user_processing.py', '--cfg-path', '/tmp/tmp4_zfocpp']
+[2023-01-14T13:42:24.273+0000] {standard_task_runner.py:83} INFO - Job 26: Subtask storing_user
+[2023-01-14T13:42:24.470+0000] {task_command.py:389} INFO - Running <TaskInstance: user_processing.storing_user manual__2023-01-14T12:33:24.613016+00:00 [running]> on host 35e95982c619
+[2023-01-14T13:42:24.656+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=user_processing
+AIRFLOW_CTX_TASK_ID=storing_user
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-14T12:33:24.613016+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-14T12:33:24.613016+00:00
+[2023-01-14T13:42:24.663+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2023-01-14T13:42:24.668+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'echo -e ".separator ","\n.import /tmp/processed_user.csv users" | sqlite C:/Users/tawan/Desktop/Airflow-docker/***.db ']
+[2023-01-14T13:42:24.702+0000] {subprocess.py:86} INFO - Output:
+[2023-01-14T13:42:24.705+0000] {subprocess.py:93} INFO - /bin/bash: line 2: sqlite: command not found
+[2023-01-14T13:42:24.708+0000] {subprocess.py:97} INFO - Command exited with return code 127
+[2023-01-14T13:42:24.742+0000] {taskinstance.py:1772} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 197, in execute
+    f"Bash command failed. The command returned a non-zero exit code {result.exit_code}."
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 127.
+[2023-01-14T13:42:24.750+0000] {taskinstance.py:1327} INFO - Marking task as FAILED. dag_id=user_processing, task_id=storing_user, execution_date=20230114T123324, start_date=20230114T134224, end_date=20230114T134224
+[2023-01-14T13:42:24.802+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 26 for task storing_user (Bash command failed. The command returned a non-zero exit code 127.; 33935)
+[2023-01-14T13:42:24.857+0000] {local_task_job.py:159} INFO - Task exited with return code 1
+[2023-01-14T13:42:24.922+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check

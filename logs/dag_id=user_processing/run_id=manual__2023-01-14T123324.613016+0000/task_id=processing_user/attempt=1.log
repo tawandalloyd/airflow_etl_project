@@ -1,0 +1,23 @@
+[2023-01-14T13:42:19.651+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: user_processing.processing_user manual__2023-01-14T12:33:24.613016+00:00 [queued]>
+[2023-01-14T13:42:19.683+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: user_processing.processing_user manual__2023-01-14T12:33:24.613016+00:00 [queued]>
+[2023-01-14T13:42:19.684+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-14T13:42:19.685+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 1
+[2023-01-14T13:42:19.686+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2023-01-14T13:42:19.729+0000] {taskinstance.py:1304} INFO - Executing <Task(PythonOperator): processing_user> on 2023-01-14 12:33:24.613016+00:00
+[2023-01-14T13:42:19.746+0000] {standard_task_runner.py:55} INFO - Started process 33932 to run task
+[2023-01-14T13:42:19.760+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'user_processing', 'processing_user', 'manual__2023-01-14T12:33:24.613016+00:00', '--job-id', '25', '--raw', '--subdir', 'DAGS_FOLDER/user_processing.py', '--cfg-path', '/tmp/tmpkqccesll']
+[2023-01-14T13:42:19.776+0000] {standard_task_runner.py:83} INFO - Job 25: Subtask processing_user
+[2023-01-14T13:42:20.023+0000] {task_command.py:389} INFO - Running <TaskInstance: user_processing.processing_user manual__2023-01-14T12:33:24.613016+00:00 [running]> on host 35e95982c619
+[2023-01-14T13:42:20.305+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=user_processing
+AIRFLOW_CTX_TASK_ID=processing_user
+AIRFLOW_CTX_EXECUTION_DATE=2023-01-14T12:33:24.613016+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-01-14T12:33:24.613016+00:00
+[2023-01-14T13:42:20.390+0000] {python.py:177} INFO - Done. Returned value was: None
+[2023-01-14T13:42:20.423+0000] {taskinstance.py:1327} INFO - Marking task as SUCCESS. dag_id=user_processing, task_id=processing_user, execution_date=20230114T123324, start_date=20230114T134219, end_date=20230114T134220
+[2023-01-14T13:42:20.502+0000] {local_task_job.py:159} INFO - Task exited with return code 0
+[2023-01-14T13:42:20.575+0000] {taskinstance.py:2582} INFO - 1 downstream tasks scheduled from follow-on schedule check
